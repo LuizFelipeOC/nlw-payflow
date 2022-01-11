@@ -1,5 +1,6 @@
 // ignore_for_file: sized_box_for_whitespace
 import 'package:flutter/material.dart';
+import 'package:payflow/modules/login/login_controller.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_images.dart';
 import 'package:payflow/shared/themes/app_styles.dart';
@@ -13,6 +14,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final controller = AuthController();
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -69,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       top: 40,
                     ),
                     child: ButtonSocialWidget(
-                      ontap: () {},
+                      ontap: () => controller.inSignIn(context),
                     ),
                   )
                 ],
